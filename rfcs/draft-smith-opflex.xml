@@ -673,7 +673,7 @@
           [ {"role": [<role>+], 
           "connectivity_info": <string>}* ]
     },
-    "error": null,
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
         <t>The "name" is the identifier of the OpFlex Control Protocol
@@ -717,6 +717,7 @@
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -782,6 +783,7 @@
     "result": {
         "policy": [<mo>*],
     },
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
 
@@ -855,6 +857,7 @@
         follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -898,6 +901,7 @@
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -936,6 +940,7 @@
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -968,6 +973,7 @@
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -1034,6 +1040,7 @@
     "result": {
         "endpoint": [<mo>*],
     },
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
 
@@ -1106,6 +1113,7 @@
         follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -1142,6 +1150,7 @@
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
       </section>
@@ -1172,6 +1181,7 @@
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
     "result": {},
+    "error": {},
     "id": same "id" as request
 }]]></artwork></figure>
 
