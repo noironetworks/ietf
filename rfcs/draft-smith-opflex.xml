@@ -668,7 +668,8 @@
     "result": {
         "name": <string>,
         "my_role": [<role>+],
-        "domain": <string>
+        "domain": <string>,
+        "peers":
           [ {"role": <role>, 
           "connectivity_info": <string>}* ]
     },
