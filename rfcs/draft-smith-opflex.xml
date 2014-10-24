@@ -670,7 +670,7 @@
         "my_role": [<role>+],
         "domain": <string>,
         "peers":
-          [ {"role": <role>, 
+          [ {"role": [<role>+], 
           "connectivity_info": <string>}* ]
     },
     "error": null,
