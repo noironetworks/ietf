@@ -871,8 +871,8 @@
     "method": "policy_update",
     "params": [{
         "replace": [<mo>*],
-        "merge-children": [<mo>*],
-        "delete": [<URI>*],
+        "merge_children": [<mo>*],
+        "delete_uri": [<URI>*],
     }],
     "id": <nonnull-json-value>
 }]]></artwork></figure>
@@ -883,14 +883,14 @@
         do not appear in the specified object's child list, then these
         child elements MUST be deleted.</t>
 
-        <t>The "merge-children" parameter contains a list of objects
+        <t>The "merge_children" parameter contains a list of objects
         that will replace the properties of any existing object,
         including unsetting any properties that are set in the
         existing object but not set in the specified object.  Any
         children that are specified will added to the set of children
         already present, but no children will be deleted.</t>
 
-        <t>The "delete" parameter specifies a list of URIs that
+        <t>The "delete_uri" parameter specifies a list of URIs that
         reference objects that no longer exist and should be
         deleted.</t>
 
@@ -1123,7 +1123,7 @@
     "method": "endpoint_update",
     "params": [{
         "replace": [<mo>*],
-        "delete": [<URI>*],
+        "delete_uri": [<URI>*],
     }],
     "id": <nonnull-json-value>
 }]]></artwork></figure>
@@ -1134,7 +1134,7 @@
         do not appear in the specified object's child list, then these
         child elements MUST be deleted.</t>
 
-        <t>The "delete" parameter specifies a list of URIs that
+        <t>The "delete_uri" parameter specifies a list of URIs that
         reference objects that no longer exist and should be
         deleted.</t>
 
