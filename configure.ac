@@ -69,13 +69,21 @@ AC_PROG_INSTALL
 # check for ietf tools
 AC_PATH_PROG([XML2RFC], [xml2rfc], "no")
 AC_PATH_PROG([XSLTPROC], [xsltproc], "no")
-
 AM_CONDITIONAL([BUILD_SPECIFICATIONS],
                [test "x$XML2RFC" != "xno" -a "x$XSLTPROC" != "xno"])
 
 AC_PATH_PROG([XMLLINT], [xmllint], "no")
 AM_CONDITIONAL([LINT_SPECIFICATIONS],
                [test "x$XMLLINT" != "xno"])
+if test x"$XML2RFC" == x"no" ; then
+    AC_MSG_ERROR([Please install xml2rfc before installing.])
+fi
+if test x"$XSLTPROC" == x"no" ; then
+    AC_MSG_ERROR([Please install xsltproc before installing.])
+fi
+if test x"$XMLLINT" == x"no" ; then
+    AC_MSG_ERROR([Please install xmllint before installing.])
+fi
 
 # ---------------------------------------------------------------
 # Dependency checks
