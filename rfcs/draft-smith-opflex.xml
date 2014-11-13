@@ -1125,7 +1125,8 @@
     "method": "endpoint_update",
     "params": [{
         "replace": [<mo>*],
-        "delete_uri": [<URI>*],
+        "delete": [{"subject": <string>,
+                    "uri": <URI>}*]
     }],
     "id": <nonnull-json-value>
 }]]></artwork></figure>
@@ -1136,9 +1137,10 @@
         do not appear in the specified object's child list, then these
         child elements MUST be deleted.</t>
 
-        <t>The "delete_uri" parameter specifies a list of URIs that
-        reference objects that no longer exist and should be
-        deleted.</t>
+        <t>The "delete" parameter specifies a list of objects that no
+        longer exist and should be deleted.  The "subject" field is
+        the class of entity to be deleted and the "uri" field is the
+        URI for the specific object to delete.</t>
 
         <t>The response object is as follows:</t>
         <figure><artwork><![CDATA[{
