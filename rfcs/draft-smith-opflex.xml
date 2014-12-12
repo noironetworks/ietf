@@ -1158,14 +1158,10 @@
         <figure><artwork><![CDATA[{
     "method": "state_report",
     "params": [{
-        "object": <URI>,
         "observable": [<mo>*]}+
     ],
     "id": <nonnull-json-value>
 }]]></artwork></figure>
-
-        <t>The "object" parameter is a URI that indicates the managed
-        object to which this state report applies.</t>
 
         <t>The "observable" parameter is a list of managed objects
         that will be updated in this state report.  Each of these
