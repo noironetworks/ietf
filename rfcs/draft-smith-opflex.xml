@@ -592,6 +592,10 @@
           <t hangText="&quot;EDOMAIN&quot;"><vspace blankLines="0"/>
           The policy domains do not match.</t>
 
+          <t hangText="&quot;ELOCATION&quot;"><vspace blankLines="0"/>
+          An authoritative location is required but could not be
+          determined.</t>
+
         </list></t>
 
         <t>An OpFlex component MUST be capable of receiving an
@@ -643,6 +647,7 @@
         "proto_version": "1.0",
         "name": <string>,
         "domain": <string>,
+        "my_location": <string>,
         "my_role": [<role>+]
     }],
     "id": <nonnull-json-value>
@@ -651,12 +656,17 @@
         <t>The "proto_version" is a string that represents the version
         of the OpFlex protocol.  This is the fixed value "1.0".</t>
 
-        <t>The "name" is an identifier of the OpFlex Control Protocol
+        <t>The "name" is an identifier of the OpFlex control protocol
         participant that is unique within the policy
         domain.</t>
 
         <t>The "domain" is a globally unique identifier indicating the
         policy domain that this participant exists.</t>
+
+        <t>The "my_location" is an optional identifier that identifies
+        the location of the OpFlex control protocol participant that
+        is making the request.  This is a string in a format
+        appropriate for the specific OpFlex policy domain.</t>
 
         <t>The "my_role" states the particular OpFlex component
         contained within this participant.  Since a participant may be
@@ -669,6 +679,8 @@
         "name": <string>,
         "my_role": [<role>+],
         "domain": <string>,
+        "my_location": <string>,
+        "your_location": <string>,
         "peers":
           [ {"role": [<role>+], 
           "connectivity_info": <string>}* ]
@@ -685,6 +697,19 @@
         policy domain that the participant sending the
         response exists.</t>
 
+        <t>The "my_location" is an optional identifier that identifies
+        the location of the OpFlex control protocol participant that
+        is sending the response.  This is a string in a format
+        appropriate for the specific OpFlex policy domain.</t>
+
+        <t>The "your_location" is an optional identifier that
+        identifies the location of the OpFlex control protocol
+        participant that sent the request.  This is a string in a
+        format appropriate for the specific OpFlex policy domain.  If
+        the requesting participant included a "my_location" field in
+        the request, this field MAY indicate a new, authoritative
+        location.</t>
+
         <t>The "role" and associated "connectivity_info" give the
         reachability information (i.e. IP address or DNS name) and the
         role of the entity that the participant is communicating using
@@ -699,6 +724,12 @@
         it MUST reply with an error response with the "code" field set
         to "EDOMAIN".</t>
 
+        <t>If the requesting participant did not include a
+        "my_location" field in the request, and the responding
+        participant is unable to determine an authoritative location
+        field for the requesting participant, the responding
+        participant MAY reply with an error response with the "code"
+        field set to "ELOCATION".</t>
       </section>
       
       <section title="Echo">
